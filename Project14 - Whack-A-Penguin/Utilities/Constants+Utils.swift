@@ -16,3 +16,8 @@ enum ImageKeys {
     static let gameOver         = "gameOver"
     static let whackMask        = "whackMask"
 }
+
+enum SoundKeys {
+    static let whackBad         = "whackBad.caf"
+    static let whackGood        = "whack.caf"
+}
