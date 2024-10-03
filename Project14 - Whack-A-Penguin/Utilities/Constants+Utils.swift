@@ -21,3 +21,8 @@ enum SoundKeys {
     static let whackBad         = "whackBad.caf"
     static let whackGood        = "whack.caf"
 }
+
+enum NodeNameKeys {
+    static let charFriend       = "charFriend"
+    static let charEnemy        = "charEnemy"
+}

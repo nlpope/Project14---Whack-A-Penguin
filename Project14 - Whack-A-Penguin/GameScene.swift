@@ -80,26 +80,23 @@ class GameScene: SKScene {
         let tappedNodes     = nodes(at: location)
         
         for node in tappedNodes {
-            if node.name == "charFriend" {
+            guard let whackSlot = node.parent?.parent as? WhackSlot else { continue }
+            if !whackSlot.isVisible { continue }
+            if whackSlot.isHit { continue }
+            whackSlot.hit()
+            
+            if node.name == NodeNameKeys.charEnemy {
                 // they shouldn't have whacked this penguin
-                guard let whackSlot = node.parent?.parent as? WhackSlot else { continue }
-                if !whackSlot.isVisible { continue }
-                if whackSlot.isHit { continue }
-                
-                whackSlot.hit()
+                print("bad working")
                 score -= 5
-                
                 run(SKAction.playSoundFileNamed(SoundKeys.whackBad, waitForCompletion: false))
-            } else if node.name == "charEnemy" {
-                // they should have whacked this one
-                guard let whackSlot         = node.parent?.parent as? WhackSlot else { continue }
-                if !whackSlot.isVisible { continue }
-                if whackSlot.isHit { continue }
                 
+            } else if node.name == NodeNameKeys.charFriend {
+                // they should have whacked this one
+                print("good working")
+                #warning("differentiate hide / hit / scale behavior")
                 whackSlot.charNode.xScale   = 0.85
                 whackSlot.charNode.yScale   = 0.85
-                
-                whackSlot.hit()
                 score += 1
                 
                 run(SKAction.playSoundFileNamed(SoundKeys.whackGood, waitForCompletion: false))
@@ -107,5 +104,3 @@ class GameScene: SKScene {
         }
     }
 }
-
-//committing unstaged changes
