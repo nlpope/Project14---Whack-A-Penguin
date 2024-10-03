@@ -5,4 +5,14 @@
 //  Created by Noah Pope on 10/2/24.
 //
 
-import Foundation
+import UIKit
+
+enum ImageKeys {
+    static let chalkduster      = "chalkDuster"
+    static let whackBackground  = "whackBackground"
+    static let whackHole        = "whackHole"
+    static let penguinGood      = "penguinGood"
+    static let penguinEvil      = "penguinEvil"
+    static let gameOver         = "gameOver"
+    static let whackMask        = "whackMask"
+}
