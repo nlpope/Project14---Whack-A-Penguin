@@ -77,3 +77,5 @@ class WhackSlot: SKNode {
         charNode.run(SKAction.sequence([delay, hide, notVisible]))
     }
 }
+
+// adding notes
