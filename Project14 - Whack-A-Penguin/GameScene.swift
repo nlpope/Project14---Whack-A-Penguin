@@ -125,7 +125,7 @@ class GameScene: SKScene {
                 let playBadSound = SKAction.playSoundFileNamed(SoundKeys.whackBad, waitForCompletion: false)
                
                 run(SKAction.playSoundFileNamed(SoundKeys.whackBad, waitForCompletion: false))
-                grindGears(onEnemy: node)
+                grindGears(onEnemy: whackSlot)
                 
             } else if node.name == NodeNameKeys.charFriend {
                 #warning("differentiate hide / hit / scale behavior")
