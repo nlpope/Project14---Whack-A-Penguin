@@ -34,6 +34,15 @@ class WhackSlot: SKNode {
     }
     
     
+    func addMudEffect() {
+        if let mudParticles     = SKEmitterNode(fileNamed: EmitterKeys.mudEmitter) {
+            mudParticles.position   = charNode.parent!.position
+            addChild(mudParticles)
+        }
+    }
+    
+    
+    #warning("mud emerging even if no penguin is appearing")
     func show(hideTime: Double) {
         if isVisible { return }
         
@@ -49,18 +58,14 @@ class WhackSlot: SKNode {
         }
         
         // 1st issue = mud emerging from once hit empty holes
-        // 2nd issue = mud emerging from once hit empty holes but only for the Bad penguins
-        // 1st solve = moving "charNode.run... isHit = false" inside the if let mudParticles
-        // 2nd solve = moving the if let to after charNode is renamed solved mud particle issue
+        // ... turned into mud emerging from once hit empty holes but only for the Bad penguins
         // ... keep in mind the OG charNode's name referenced Good penguins
 
-        if let mudParticles     = SKEmitterNode(fileNamed: EmitterKeys.mudEmitter) {
-            mudParticles.position   = charNode.parent!.position
-            addChild(mudParticles)
-            charNode.run(SKAction.moveBy(x: 0, y: 80, duration: 0.05))
-            isVisible       = true
-            isHit           = false
-        }
+        let emergeFromMud   = SKAction.run {self.addMudEffect()}
+        let moveBySequence  = SKAction.moveBy(x: 0, y: 80, duration: 0.05)
+        charNode.run(SKAction.sequence([emergeFromMud, moveBySequence]))
+        isVisible       = true
+        isHit           = false
         
         DispatchQueue.main.asyncAfter(deadline: .now() + (hideTime * 3.5)) { [weak self] in
             guard let self = self else { return }
