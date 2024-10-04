@@ -31,6 +31,7 @@
 		408C105D2CADB51600F9A120 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408C105C2CADB51600F9A120 /* WhackSlot.swift */; };
 		408C10622CADB65F00F9A120 /* Constants+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408C10612CADB65F00F9A120 /* Constants+Utils.swift */; };
 		40D0E6B42CAF9A9D00BAC6F5 /* SmokeEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 40D0E6B32CAF9A9D00BAC6F5 /* SmokeEmitter.sks */; };
+		40D0E6B82CAFB5BD00BAC6F5 /* MudEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 40D0E6B62CAFB5BD00BAC6F5 /* MudEmitter.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		408C10612CADB65F00F9A120 /* Constants+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Utils.swift"; sourceTree = "<group>"; };
 		40D0E6B32CAF9A9D00BAC6F5 /* SmokeEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SmokeEmitter.sks; sourceTree = "<group>"; };
 		40D0E6B52CAFACD500BAC6F5 /* gameOver.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameOver.caf; sourceTree = "<group>"; };
+		40D0E6B62CAFB5BD00BAC6F5 /* MudEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MudEmitter.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				408C101F2CAD9FB800F9A120 /* GameViewController.swift */,
 				408C101D2CAD9FB800F9A120 /* GameScene.swift */,
 				40D0E6B32CAF9A9D00BAC6F5 /* SmokeEmitter.sks */,
+				40D0E6B62CAFB5BD00BAC6F5 /* MudEmitter.sks */,
 				408C105C2CADB51600F9A120 /* WhackSlot.swift */,
 				408C105E2CADB62500F9A120 /* Utilities */,
 				408C10212CAD9FB800F9A120 /* Main.storyboard */,
@@ -200,6 +203,7 @@
 				408C101A2CAD9FB800F9A120 /* GameScene.sks in Resources */,
 				408C104F2CADA7E200F9A120 /* gameOver@2x.png in Resources */,
 				408C105A2CADA7E200F9A120 /* whackMask.png in Resources */,
+				40D0E6B82CAFB5BD00BAC6F5 /* MudEmitter.sks in Resources */,
 				408C10592CADA7E200F9A120 /* whackHole@2x.png in Resources */,
 				408C10232CAD9FB800F9A120 /* Base in Resources */,
 				408C10582CADA7E200F9A120 /* whackHole.png in Resources */,

@@ -40,7 +40,7 @@ class GameScene: SKScene {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self = self else { return }
-            self.createEnemy()
+            self.showPenguins()
         }
     }
     
@@ -53,7 +53,7 @@ class GameScene: SKScene {
     }
 
     //committing unsaved changes
-    func createEnemy() {
+    func showPenguins() {
         numRounds += 1
         if numRounds >= 30 {
             for slot in slots { slot.hide() }
@@ -79,7 +79,6 @@ class GameScene: SKScene {
         
         slots.shuffle()
         slots[0].show(hideTime: popupTime)
-        
         if Int.random(in: 0...12) > 4 { slots[1].show(hideTime: popupTime)}
         if Int.random(in: 0...12) > 8 { slots[2].show(hideTime: popupTime)}
         if Int.random(in: 0...12) > 10 { slots[3].show(hideTime: popupTime)}
@@ -91,19 +90,14 @@ class GameScene: SKScene {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
             guard let self = self else { return }
-            self.createEnemy()
+            self.showPenguins()
         }
     }
     
     
-    func emergeFromMud() {
-        
-    }
-    
-    
-    func grindGears(onEnemy enemy: SKNode) {
+    func grindGears(onSlot slot: SKNode) {
         if let smokeParticles   = SKEmitterNode(fileNamed: EmitterKeys.smokeEmitter) {
-            smokeParticles.position = enemy.position
+            smokeParticles.position = slot.position
             addChild(smokeParticles)
         }
     }
@@ -122,13 +116,11 @@ class GameScene: SKScene {
             
             if node.name == NodeNameKeys.charEnemy {
                 score -= 5
-                let playBadSound = SKAction.playSoundFileNamed(SoundKeys.whackBad, waitForCompletion: false)
-               
+    
                 run(SKAction.playSoundFileNamed(SoundKeys.whackBad, waitForCompletion: false))
-                grindGears(onEnemy: whackSlot)
+                grindGears(onSlot: whackSlot)
                 
             } else if node.name == NodeNameKeys.charFriend {
-                #warning("differentiate hide / hit / scale behavior")
                 whackSlot.charNode.xScale   = 0.85
                 whackSlot.charNode.yScale   = 0.85
                 score += 1

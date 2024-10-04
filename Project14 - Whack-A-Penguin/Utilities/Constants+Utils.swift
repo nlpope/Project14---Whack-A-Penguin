@@ -33,4 +33,5 @@ enum NodeNameKeys {
 
 enum EmitterKeys {
     static let smokeEmitter     = "SmokeEmitter"
+    static let mudEmitter       = "MudEmitter"
 }

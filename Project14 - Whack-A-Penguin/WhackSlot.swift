@@ -39,9 +39,6 @@ class WhackSlot: SKNode {
         
         charNode.xScale = 1
         charNode.yScale = 1
-        charNode.run(SKAction.moveBy(x: 0, y: 80, duration: 0.05))
-        isVisible       = true
-        isHit           = false
         
         if Int.random(in: 0...2) == 0 {
             charNode.texture    = SKTexture(imageNamed: ImageKeys.penguinGood)
@@ -49,6 +46,20 @@ class WhackSlot: SKNode {
         } else {
             charNode.texture    = SKTexture(imageNamed: ImageKeys.penguinEvil)
             charNode.name       = NodeNameKeys.charEnemy
+        }
+        
+        // 1st issue = mud emerging from once hit empty holes
+        // 2nd issue = mud emerging from once hit empty holes but only for the Bad penguins
+        // 1st solve = moving "charNode.run... isHit = false" inside the if let mudParticles
+        // 2nd solve = moving the if let to after charNode is renamed solved mud particle issue
+        // ... keep in mind the OG charNode's name referenced Good penguins
+
+        if let mudParticles     = SKEmitterNode(fileNamed: EmitterKeys.mudEmitter) {
+            mudParticles.position   = charNode.parent!.position
+            addChild(mudParticles)
+            charNode.run(SKAction.moveBy(x: 0, y: 80, duration: 0.05))
+            isVisible       = true
+            isHit           = false
         }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + (hideTime * 3.5)) { [weak self] in
@@ -66,7 +77,6 @@ class WhackSlot: SKNode {
     }
     
     
-    #warning("differentiate hide / hit / scale behavior")
     func hit() {
         isHit           = true
         let delay       = SKAction.wait(forDuration: 0.25)
