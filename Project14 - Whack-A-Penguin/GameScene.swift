@@ -51,16 +51,7 @@ class GameScene: SKScene {
         addChild(slot)
         slots.append(slot)
     }
-    
-    
-    /**
-     gameScore                           = SKLabelNode(fontNamed: FontKeys.chalkduster)
-     gameScore.text                      = "Score: 0"
-     gameScore.position                  = CGPoint(x: 8, y: 8)
-     gameScore.horizontalAlignmentMode   = .left
-     gameScore.fontSize                  = 48
-     addChild(gameScore)
-     */
+
     
     func createEnemy() {
         numRounds += 1
@@ -79,17 +70,9 @@ class GameScene: SKScene {
             finalScore.zPosition    = 1
             addChild(finalScore)
             
+            run(SKAction.playSoundFileNamed(SoundKeys.gameOver, waitForCompletion: false))
+
             return
-        }
-        
-        
-        func destroy(enemy: SKNode) {
-            if let smokeParticles   = SKEmitterNode(fileNamed: EmitterKeys.smokeEmitter) {
-                smokeParticles.position = enemy.position
-                addChild(smokeParticles)
-            }
-            
-            enemy.removeFromParent()
         }
         
         popupTime *= 0.991
@@ -113,6 +96,19 @@ class GameScene: SKScene {
     }
     
     
+    func emergeFromMud() {
+        
+    }
+    
+    
+    func grindGears(onEnemy enemy: SKNode) {
+        if let smokeParticles   = SKEmitterNode(fileNamed: EmitterKeys.smokeEmitter) {
+            smokeParticles.position = enemy.position
+            addChild(smokeParticles)
+        }
+    }
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch     = touches.first else { return }
         let location        = touch.location(in: self)
@@ -126,7 +122,10 @@ class GameScene: SKScene {
             
             if node.name == NodeNameKeys.charEnemy {
                 score -= 5
+                let playBadSound = SKAction.playSoundFileNamed(SoundKeys.whackBad, waitForCompletion: false)
+               
                 run(SKAction.playSoundFileNamed(SoundKeys.whackBad, waitForCompletion: false))
+                grindGears(onEnemy: node)
                 
             } else if node.name == NodeNameKeys.charFriend {
                 #warning("differentiate hide / hit / scale behavior")

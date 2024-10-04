@@ -23,6 +23,7 @@ enum ImageKeys {
 enum SoundKeys {
     static let whackBad         = "whackBad.caf"
     static let whackGood        = "whack.caf"
+    static let gameOver         = "gameOver.caf"
 }
 
 enum NodeNameKeys {

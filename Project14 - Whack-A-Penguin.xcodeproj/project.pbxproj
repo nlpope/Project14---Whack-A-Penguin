@@ -59,6 +59,7 @@
 		408C105C2CADB51600F9A120 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 		408C10612CADB65F00F9A120 /* Constants+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Utils.swift"; sourceTree = "<group>"; };
 		40D0E6B32CAF9A9D00BAC6F5 /* SmokeEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SmokeEmitter.sks; sourceTree = "<group>"; };
+		40D0E6B52CAFACD500BAC6F5 /* gameOver.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameOver.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +124,7 @@
 				408C104A2CADA7E100F9A120 /* whackHole@2x.png */,
 				408C104B2CADA7E100F9A120 /* whackMask.png */,
 				408C104C2CADA7E100F9A120 /* whackMask@2x.png */,
+				40D0E6B52CAFACD500BAC6F5 /* gameOver.caf */,
 			);
 			name = Content;
 			path = "../../Project Files - HackingWithSwift/Classic/project14/Project14/Content";
