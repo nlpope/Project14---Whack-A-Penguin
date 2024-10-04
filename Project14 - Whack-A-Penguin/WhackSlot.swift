@@ -58,7 +58,7 @@ class WhackSlot: SKNode {
     }
     
     
-#warning("differentiate hide / hit / scale behavior")
+    #warning("differentiate hide / hit / scale behavior")
     func hide() {
         if !isVisible { return }
         
