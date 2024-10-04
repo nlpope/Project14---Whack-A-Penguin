@@ -82,7 +82,15 @@ class GameScene: SKScene {
             return
         }
         
-      
+        
+        func destroy(enemy: SKNode) {
+            if let smokeParticles   = SKEmitterNode(fileNamed: EmitterKeys.smokeEmitter) {
+                smokeParticles.position = enemy.position
+                addChild(smokeParticles)
+            }
+            
+            enemy.removeFromParent()
+        }
         
         popupTime *= 0.991
         
@@ -117,14 +125,10 @@ class GameScene: SKScene {
             whackSlot.hit()
             
             if node.name == NodeNameKeys.charEnemy {
-                // they shouldn't have whacked this penguin
-                print("bad working")
                 score -= 5
                 run(SKAction.playSoundFileNamed(SoundKeys.whackBad, waitForCompletion: false))
                 
             } else if node.name == NodeNameKeys.charFriend {
-                // they should have whacked this one
-                print("good working")
                 #warning("differentiate hide / hit / scale behavior")
                 whackSlot.charNode.xScale   = 0.85
                 whackSlot.charNode.yScale   = 0.85

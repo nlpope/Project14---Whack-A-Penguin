@@ -58,7 +58,6 @@ class WhackSlot: SKNode {
     }
     
     
-    #warning("differentiate hide / hit / scale behavior")
     func hide() {
         if !isVisible { return }
         
@@ -77,5 +76,3 @@ class WhackSlot: SKNode {
         charNode.run(SKAction.sequence([delay, hide, notVisible]))
     }
 }
-
-// adding notes

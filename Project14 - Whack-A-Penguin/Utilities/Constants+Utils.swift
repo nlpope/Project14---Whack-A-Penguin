@@ -29,3 +29,7 @@ enum NodeNameKeys {
     static let charFriend       = "charFriend"
     static let charEnemy        = "charEnemy"
 }
+
+enum EmitterKeys {
+    static let smokeEmitter     = "SmokeEmitter"
+}

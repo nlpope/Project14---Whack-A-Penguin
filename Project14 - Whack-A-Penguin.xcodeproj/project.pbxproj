@@ -30,6 +30,7 @@
 		408C105B2CADA7E200F9A120 /* whackMask@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 408C104C2CADA7E100F9A120 /* whackMask@2x.png */; };
 		408C105D2CADB51600F9A120 /* WhackSlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408C105C2CADB51600F9A120 /* WhackSlot.swift */; };
 		408C10622CADB65F00F9A120 /* Constants+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408C10612CADB65F00F9A120 /* Constants+Utils.swift */; };
+		40D0E6B42CAF9A9D00BAC6F5 /* SmokeEmitter.sks in Resources */ = {isa = PBXBuildFile; fileRef = 40D0E6B32CAF9A9D00BAC6F5 /* SmokeEmitter.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		408C104C2CADA7E100F9A120 /* whackMask@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "whackMask@2x.png"; sourceTree = "<group>"; };
 		408C105C2CADB51600F9A120 /* WhackSlot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhackSlot.swift; sourceTree = "<group>"; };
 		408C10612CADB65F00F9A120 /* Constants+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants+Utils.swift"; sourceTree = "<group>"; };
+		40D0E6B32CAF9A9D00BAC6F5 /* SmokeEmitter.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = SmokeEmitter.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				408C10192CAD9FB800F9A120 /* GameScene.sks */,
 				408C101F2CAD9FB800F9A120 /* GameViewController.swift */,
 				408C101D2CAD9FB800F9A120 /* GameScene.swift */,
+				40D0E6B32CAF9A9D00BAC6F5 /* SmokeEmitter.sks */,
 				408C105C2CADB51600F9A120 /* WhackSlot.swift */,
 				408C105E2CADB62500F9A120 /* Utilities */,
 				408C10212CAD9FB800F9A120 /* Main.storyboard */,
@@ -208,6 +211,7 @@
 				408C10542CADA7E200F9A120 /* whack.caf in Resources */,
 				408C10532CADA7E200F9A120 /* penguinGood@2x.png in Resources */,
 				408C10522CADA7E200F9A120 /* penguinGood.png in Resources */,
+				40D0E6B42CAF9A9D00BAC6F5 /* SmokeEmitter.sks in Resources */,
 				408C10572CADA7E200F9A120 /* whackBad.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
