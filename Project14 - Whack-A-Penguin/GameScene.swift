@@ -26,7 +26,7 @@ class GameScene: SKScene {
         background.zPosition                = -1
         addChild(background)
         
-        gameScore                           = SKLabelNode(fontNamed: ImageKeys.chalkduster)
+        gameScore                           = SKLabelNode(fontNamed: FontKeys.chalkduster)
         gameScore.text                      = "Score: 0"
         gameScore.position                  = CGPoint(x: 8, y: 8)
         gameScore.horizontalAlignmentMode   = .left
@@ -53,15 +53,31 @@ class GameScene: SKScene {
     }
     
     
+    /**
+     gameScore                           = SKLabelNode(fontNamed: FontKeys.chalkduster)
+     gameScore.text                      = "Score: 0"
+     gameScore.position                  = CGPoint(x: 8, y: 8)
+     gameScore.horizontalAlignmentMode   = .left
+     gameScore.fontSize                  = 48
+     addChild(gameScore)
+     */
+    
     func createEnemy() {
         numRounds += 1
         if numRounds >= 30 {
             for slot in slots { slot.hide() }
     
-            let gameOver        = SKSpriteNode(imageNamed: ImageKeys.gameOver)
-            gameOver.position   = CGPoint(x: 512, y: 384)
-            gameOver.zPosition  = 1
+            let gameOver            = SKSpriteNode(imageNamed: ImageKeys.gameOver)
+            gameOver.position       = CGPoint(x: 512, y: 384)
+            gameOver.zPosition      = 1
             addChild(gameOver)
+                
+            let finalScore          = SKLabelNode(fontNamed: FontKeys.chalkduster)
+            finalScore.text         = "Final Score: \(score)"
+            finalScore.position     = CGPoint(x: 512, y: 200)
+            finalScore.fontSize     = 100
+            finalScore.zPosition    = 1
+            addChild(finalScore)
             
             return
         }

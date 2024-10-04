@@ -7,8 +7,11 @@
 
 import UIKit
 
-enum ImageKeys {
+enum FontKeys {
     static let chalkduster      = "chalkDuster"
+}
+
+enum ImageKeys {
     static let whackBackground  = "whackBackground"
     static let whackHole        = "whackHole"
     static let penguinGood      = "penguinGood"
