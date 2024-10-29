@@ -18,7 +18,7 @@ class GameScene: SKScene {
     
     
     override func didMove(to view: SKView) {
-        let background          = SKSpriteNode(imageNamed: ImageKeys.whackBackground)
+        let background                      = SKSpriteNode(imageNamed: ImageKeys.whackBackground)
         background.position                 = CGPoint(x: 512, y: 384)
         background.blendMode                = .replace
         background.zPosition                = -1
@@ -94,7 +94,7 @@ class GameScene: SKScene {
     
     
     func grindGears(onSlot slot: SKNode) {
-        if let smokeParticles   = SKEmitterNode(fileNamed: EmitterKeys.smokeEmitter) {
+        if let smokeParticles       = SKEmitterNode(fileNamed: EmitterKeys.smokeEmitter) {
             smokeParticles.position = slot.position
             addChild(smokeParticles)
         }
