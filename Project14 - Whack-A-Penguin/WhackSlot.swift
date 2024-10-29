@@ -10,8 +10,8 @@ import UIKit
 
 class WhackSlot: SKNode {
     var charNode: SKSpriteNode!
-    var isVisible   = false
-    var isHit       = false
+    var isVisible           = false
+    var isHit               = false
     
     // why don't we use init here again?
     func configure(at position: CGPoint) {

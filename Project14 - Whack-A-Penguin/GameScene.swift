@@ -16,8 +16,6 @@ class GameScene: SKScene {
         didSet { gameScore.text = "Score: \(score)" }
     }
     
-    private var label : SKLabelNode?
-    private var spinnyNode : SKShapeNode?
     
     override func didMove(to view: SKView) {
         let background          = SKSpriteNode(imageNamed: ImageKeys.whackBackground)
